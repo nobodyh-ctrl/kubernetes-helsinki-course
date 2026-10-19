@@ -4,23 +4,22 @@ My solutions for the [DevOps with Kubernetes](https://devopswithkubernetes.com/)
 
 Every exercise is developed incrementally and published as its own **GitHub release**, so the repository history doubles as a record of progress.
 
+**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1)**
+
 ---
 
 ## Repository layout
 
 ```
 .
-├── part-1/          # Introduction to Kubernetes
-│   ├── 1.1/
-│   ├── 1.2/
-│   └── ...
-├── part-2/          # Deploying applications
-├── part-3/          # Managing deployments
-├── part-4/          # Applying Kubernetes
-└── part-5/          # Kubernetes in practice
+├── log_output/      # 1.1 — Log output
+├── .gitignore
+└── README.md
 ```
 
-Each exercise directory is self-contained: Kubernetes manifests, application source when needed, and a short `README.md` describing what was done and how to run it.
+Each application lives in its own top-level directory, named after the app. Inside it you will find the source code, the `Dockerfile`, the Kubernetes manifests (from exercise 1.3 onwards), and a short `README.md` describing what was done and how to run it.
+
+Directories are added as the course advances.
 
 ## Releases
 
@@ -28,22 +27,27 @@ Each completed exercise gets:
 
 - One commit containing that exercise's files
 - An annotated tag in the form `<part>.<exercise>` (e.g. `1.1`, `2.3`, `4.10`)
-- A GitHub release with the tag, using the exercise number as the title
+- A GitHub release using the exercise number as the title
 
 This makes it easy to review a single exercise without digging through later changes:
 
 ```bash
-git checkout 1.1                    # inspect the repository at that exercise
-kubectl apply -f part-1/1.1/ -n <namespace>
+git checkout 1.1     # inspect the repository at that exercise
 ```
 
 The `main` branch always contains every exercise completed so far.
+
+### Published releases
+
+| Exercise | Topic | Release |
+| -------- | ----- | ------- |
+| 1.1 | Log output | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
 
 ## Progress
 
 | Part | Topic | Exercises | Status |
 | ---- | ----- | --------- | ------ |
-| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 In progress |
+| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 1.1 done |
 | 2 | Deploying applications | 2.1 – 2.10 | ⏳ Pending |
 | 3 | Managing deployments | 3.1 – 3.12 | ⏳ Pending |
 | 4 | Applying Kubernetes | 4.1 – 4.10 | ⏳ Pending |
