@@ -4,7 +4,7 @@ My solutions for the [DevOps with Kubernetes](https://devopswithkubernetes.com/)
 
 Every exercise is developed incrementally and published as its own **GitHub release**, so the repository history doubles as a record of progress.
 
-**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1)**
+**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.1)**
 
 ---
 
@@ -41,7 +41,7 @@ The `main` branch always contains every exercise completed so far.
 
 | Exercise | Topic | Code | Release |
 | -------- | ----- | ---- | ------- |
-| 1.1 | Log output | [log_output @ 1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.1/log_output) | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
+| 1.1 | Log output | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.1) | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
 
 ## Progress
 
