@@ -67,8 +67,29 @@ k3d image import todo-app:dev -c k3s-default
 kubectl rollout restart deployment/todo-app
 ```
 
+## Access through the NodePort service (exercise 1.6)
+
+```bash
+kubectl apply -f manifests/service.yaml
+```
+
+The Service is of type `NodePort`:
+
+- `port: 1234` — port exposed inside the cluster
+- `targetPort: 8000` — port the application listens on
+- `nodePort: 30080` — port opened on every node
+
+In this k3d cluster, node port `30080` is published on host port `8082`:
+
+```bash
+docker port k3d-k3s-default-serverlb
+# 30080/tcp -> 0.0.0.0:8082
+```
+
+The application is then available at <http://localhost:8082>.
+
 ## Notes
 
 - The server listens on `0.0.0.0` so it is reachable from inside the cluster.
 - The page is rendered from `templates/index.html`.
-- No Service or Ingress is created yet.
+- The NodePort Service selects the pod through the `app: todo-app` label.

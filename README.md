@@ -4,7 +4,7 @@ My solutions for the [DevOps with Kubernetes](https://devopswithkubernetes.com/)
 
 Every exercise is developed incrementally and published as its own **GitHub release**, so the repository history doubles as a record of progress.
 
-**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.5](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.5)**
+**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.6](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.6)**
 
 ---
 
@@ -49,12 +49,13 @@ The `main` branch always contains every exercise completed so far.
 | 1.3 | Declarative deployment | [1.3](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.3) | [1.3](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.3) |
 | 1.4 | Todo application deployment | [1.4](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.4) | [1.4](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.4) |
 | 1.5 | HTML page and port-forward | [1.5](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.5) | [1.5](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.5) |
+| 1.6 | NodePort service | [1.6](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.6) | [1.6](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.6) |
 
 ## Progress
 
 | Part | Topic | Exercises | Status |
 | ---- | ----- | --------- | ------ |
-| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 1.1 – 1.5 done |
+| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 1.1 – 1.6 done |
 | 2 | Deploying applications | 2.1 – 2.10 | ⏳ Pending |
 | 3 | Managing deployments | 3.1 – 3.12 | ⏳ Pending |
 | 4 | Applying Kubernetes | 4.1 – 4.10 | ⏳ Pending |
