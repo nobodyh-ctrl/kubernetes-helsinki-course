@@ -22,7 +22,7 @@ k3d image import todo-app:dev -c k3s-default
 
 ## Deploy
 
-Imperative commands are used until exercise 1.3, where the deployment moves to declarative YAML.
+### Imperative (exercise 1.2)
 
 ```bash
 kubectl create deployment todo-app --image=todo-app:dev
@@ -30,6 +30,16 @@ kubectl set env deployment/todo-app PORT=8000
 ```
 
 `kubectl set env` triggers a new rollout, so the container starts with `PORT` set.
+
+### Declarative (exercise 1.4)
+
+The deployment is defined in `manifests/deployment.yaml`:
+
+```bash
+kubectl apply -f manifests/deployment.yaml
+```
+
+The manifest does not set `PORT`, so the application uses its default (`8000`).
 
 Check the result:
 
