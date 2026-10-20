@@ -1,6 +1,6 @@
 # Todo application
 
-Application for **exercise 1.2**. It starts a web server and logs the port it is listening on:
+Application for the course project. It starts a web server, logs the port it is listening on, and serves a simple HTML page at `/`:
 
 ```
 Server started in port 8000
@@ -49,7 +49,26 @@ kubectl rollout status deployment/todo-app
 kubectl logs deployment/todo-app
 ```
 
+## Access the application (exercise 1.5)
+
+There is no Service or Ingress yet, so the page is reached through a port-forward:
+
+```bash
+kubectl port-forward deployment/todo-app 8000:8000
+```
+
+Then open <http://localhost:8000>.
+
+Because the image tag stays `todo-app:dev`, after rebuilding you need to refresh the image in the cluster and restart the pod:
+
+```bash
+docker build -t todo-app:dev .
+k3d image import todo-app:dev -c k3s-default
+kubectl rollout restart deployment/todo-app
+```
+
 ## Notes
 
 - The server listens on `0.0.0.0` so it is reachable from inside the cluster.
-- No Service or Ingress is created in this exercise.
+- The page is rendered from `templates/index.html`.
+- No Service or Ingress is created yet.
