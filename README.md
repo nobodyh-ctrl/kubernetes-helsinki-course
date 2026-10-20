@@ -4,7 +4,7 @@ My solutions for the [DevOps with Kubernetes](https://devopswithkubernetes.com/)
 
 Every exercise is developed incrementally and published as its own **GitHub release**, so the repository history doubles as a record of progress.
 
-**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.2](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.2)**
+**[Browse all releases](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases)** · **[Latest: 1.3](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.3)**
 
 ---
 
@@ -13,6 +13,7 @@ Every exercise is developed incrementally and published as its own **GitHub rele
 ```
 .
 ├── log_output/      # 1.1 — Log output
+│   └── manifests/   #      Declarative deployment (1.3)
 ├── todo-app/        # 1.2 — Todo application
 ├── .gitignore
 └── README.md
@@ -44,12 +45,13 @@ The `main` branch always contains every exercise completed so far.
 | -------- | ----- | ---- | ------- |
 | 1.1 | Log output | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.1) | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
 | 1.2 | Todo application | [1.2](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.2) | [1.2](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.2) |
+| 1.3 | Declarative deployment | [1.3](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.3) | [1.3](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.3) |
 
 ## Progress
 
 | Part | Topic | Exercises | Status |
 | ---- | ----- | --------- | ------ |
-| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 1.1, 1.2 done |
+| 1 | Introduction to Kubernetes | 1.1 – 1.13 | 🚧 1.1 – 1.3 done |
 | 2 | Deploying applications | 2.1 – 2.10 | ⏳ Pending |
 | 3 | Managing deployments | 3.1 – 3.12 | ⏳ Pending |
 | 4 | Applying Kubernetes | 4.1 – 4.10 | ⏳ Pending |

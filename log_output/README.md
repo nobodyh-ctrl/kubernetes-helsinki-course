@@ -30,10 +30,18 @@ Because the tag is not `latest`, Kubernetes uses `imagePullPolicy: IfNotPresent`
 
 ## Deploy
 
-Exercise 1.1 uses imperative commands. Declarative YAML is introduced in exercise 1.3.
+### Imperative (exercise 1.1)
 
 ```bash
 kubectl create deployment log-output --image=log-output:dev
+```
+
+### Declarative (exercise 1.3)
+
+The same deployment is defined in `manifests/deployment.yaml`, so it can be applied from the file instead:
+
+```bash
+kubectl apply -f manifests/deployment.yaml
 ```
 
 Check that the pod is running:
