@@ -39,9 +39,9 @@ The `main` branch always contains every exercise completed so far.
 
 ### Published releases
 
-| Exercise | Topic | Release |
-| -------- | ----- | ------- |
-| 1.1 | Log output | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
+| Exercise | Topic | Code | Release |
+| -------- | ----- | ---- | ------- |
+| 1.1 | Log output | [log_output @ 1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/tree/1.1/log_output) | [1.1](https://github.com/nobodyh-ctrl/kubernetes-helsinki-course/releases/tag/1.1) |
 
 ## Progress
 
