@@ -1,6 +1,6 @@
 # Log output
 
-Application for **exercises 1.1, 1.3 and 1.7** of the DevOps with Kubernetes course.
+Application for **exercises 1.1, 1.3, 1.7 and 1.9** of the DevOps with Kubernetes course.
 
 It generates a random string at startup, keeps it in memory, and prints it every 5 seconds with a timestamp:
 
@@ -53,7 +53,7 @@ kubectl get pods
 kubectl rollout status deployment/log-output
 ```
 
-## Status endpoint and Ingress (exercise 1.7)
+## Status endpoint and Ingress (exercises 1.7 and 1.9)
 
 The Service and Ingress are defined in `manifests/`:
 
@@ -69,7 +69,12 @@ Timestamp: 2026-10-21T00:11:47+00:00
 Random string: cxLEPeniuKAn
 ```
 
-> The Ingress uses path `/` without a host, so it conflicts with any other Ingress using `/`. Exercise 1.8 removes it for that reason.
+Since exercise 1.9 the same Ingress also routes `/pingpong` to the `ping-pong` Service, so both applications share access:
+
+- `/pingpong` → `ping-pong:2345`
+- `/` → `log-output:2345`
+
+> The Ingress uses `/` without a host, so only one such Ingress can be active. The todo-app Ingress also uses `/`; delete `dwk-material-ingress` while working on exercise 1.9 (see `ping-pong/README.md`).
 
 ## Read the logs
 
