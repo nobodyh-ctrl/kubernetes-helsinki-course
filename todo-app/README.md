@@ -6,7 +6,7 @@ Application for the course project. It starts a web server, logs the port it is 
 Server started in port 8000
 ```
 
-The port comes from the `PORT` environment variable, falling back to `8000` when it is not set. There is no external access yet: networking is configured in a later exercise.
+The port comes from the `PORT` environment variable, falling back to `8000` when it is not set. External access is configured from exercise 1.6 onwards.
 
 ## Build the image
 
@@ -67,29 +67,25 @@ k3d image import todo-app:dev -c k3s-default
 kubectl rollout restart deployment/todo-app
 ```
 
-## Access through the NodePort service (exercise 1.6)
+## Access through the NodePort service (exercise 1.6, superseded)
+
+Exercise 1.6 exposed the application with a `NodePort` Service (`nodePort: 30080`, published on host port `8082`). In exercise 1.8 the Service became `ClusterIP` and access moved to an Ingress.
+
+## Access through Ingress (exercise 1.8)
 
 ```bash
 kubectl apply -f manifests/service.yaml
+kubectl apply -f manifests/ingress.yaml
 ```
 
-The Service is of type `NodePort`:
+The Service is now `ClusterIP` on port `2345` (→ `targetPort 8000`) and the Ingress routes `/` to it.
 
-- `port: 1234` — port exposed inside the cluster
-- `targetPort: 8000` — port the application listens on
-- `nodePort: 30080` — port opened on every node
+k3d publishes port 80 on host port `8081`, so the application is available at <http://localhost:8081>.
 
-In this k3d cluster, node port `30080` is published on host port `8082`:
-
-```bash
-docker port k3d-k3s-default-serverlb
-# 30080/tcp -> 0.0.0.0:8082
-```
-
-The application is then available at <http://localhost:8082>.
+> The log output Ingress was deleted in this exercise because both Ingresses used `/` without a host and would conflict.
 
 ## Notes
 
 - The server listens on `0.0.0.0` so it is reachable from inside the cluster.
 - The page is rendered from `templates/index.html`.
-- The NodePort Service selects the pod through the `app: todo-app` label.
+- The Service selects the pod through the `app: todo-app` label; the Ingress routes to the Service.
