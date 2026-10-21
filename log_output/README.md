@@ -1,6 +1,6 @@
 # Log output
 
-Application for **exercise 1.1** of the DevOps with Kubernetes course.
+Application for **exercises 1.1, 1.3 and 1.7** of the DevOps with Kubernetes course.
 
 It generates a random string at startup, keeps it in memory, and prints it every 5 seconds with a timestamp:
 
@@ -11,6 +11,8 @@ It generates a random string at startup, keeps it in memory, and prints it every
 ```
 
 The string stays the same while the process is alive. When the pod is recreated, a new string is generated.
+
+Since exercise 1.7 the application also serves the current status over HTTP at `/` and `/status`:
 
 ## Build the image
 
@@ -50,6 +52,24 @@ Check that the pod is running:
 kubectl get pods
 kubectl rollout status deployment/log-output
 ```
+
+## Status endpoint and Ingress (exercise 1.7)
+
+The Service and Ingress are defined in `manifests/`:
+
+```bash
+kubectl apply -f manifests/service.yaml
+kubectl apply -f manifests/ingress.yaml
+```
+
+In this k3d cluster, the load balancer publishes port 80 on host port `8081`, so the page is available at <http://localhost:8081>:
+
+```
+Timestamp: 2026-10-21T00:11:47+00:00
+Random string: cxLEPeniuKAn
+```
+
+> The Ingress uses path `/` without a host, so it conflicts with any other Ingress using `/`. Exercise 1.8 removes it for that reason.
 
 ## Read the logs
 
