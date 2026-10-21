@@ -18,6 +18,8 @@ Every exercise is developed incrementally and published as its own **GitHub rele
 │   └── manifests/   #      Declarative deployment (1.4)
 ├── ping-pong/       # 1.9 — Ping-pong
 │   └── manifests/
+├── docs/
+│   └── diagrams/    # Draw.io sources and PNG exports
 ├── .gitignore
 └── README.md
 ```
@@ -25,6 +27,28 @@ Every exercise is developed incrementally and published as its own **GitHub rele
 Each application lives in its own top-level directory, named after the app. Inside it you will find the source code, the `Dockerfile`, the Kubernetes manifests (from exercise 1.3 onwards), and a short `README.md` describing what was done and how to run it.
 
 Directories are added as the course advances.
+
+## Diagrams
+
+The cluster state at the end of exercise 1.9 is documented with Draw.io diagrams. The PNG exports are shown below; the editable `.drawio` sources live in [`docs/diagrams/`](docs/diagrams/).
+
+### Cluster topology
+
+Host, k3d serverlb, the three K3s nodes, and where each pod is scheduled.
+
+[![Cluster topology](docs/diagrams/cluster-topology.drawio.png)](docs/diagrams/cluster-topology.drawio.png)
+
+### Ingress routing
+
+Request flow from `localhost:8081` through Traefik and the shared Ingress to the two Services and Pods.
+
+[![Ingress routing](docs/diagrams/ingress-routing.drawio.png)](docs/diagrams/ingress-routing.drawio.png)
+
+### Workloads and Services
+
+How each Deployment creates a ReplicaSet and Pod, and how the Service selector matches the pod labels.
+
+[![Workloads and Services](docs/diagrams/workloads-and-services.drawio.png)](docs/diagrams/workloads-and-services.drawio.png)
 
 ## Releases
 
